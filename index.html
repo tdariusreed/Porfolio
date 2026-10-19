@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" href="styles.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <header class="header">
@@ -13,13 +16,13 @@
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="mailto:treed35@student.gsu.edu">Contact</a></li>
     </ul>
 
     <i class="fa-solid fa-bars" id="menu-icon"></i>
 
-    <button class="visit-btn">Github</button>
-    <button class="visit-btn">LinkedIn</button>
+    <a class="visit-btn" href="http://github.com/tdariusreed" target="_blank" rel="noopener noreferrer">Github</a>
+    <a class="visit-btn" href="http://www.linkedin.com/in/tdariusreed" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   </header>
 
   <section id="about" class="about">
@@ -35,13 +38,13 @@
         </div>
 
         <div class="btn-group">
-          <div class="btn">Resume</div>
-          <div class="btn">Contact</div>
+          <a class="btn" href="/Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a class="btn" href="mailto:treed35@student.gsu.edu">Contact</a>
         </div>
 
         <div class="socials">
-          <i class="fa-brands fa-github"></i>
-          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://github.com/tdariusreed" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
++         <a href="https://www.linkedin.com/in/tdariusreed" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
         </div>
 
       </div>
@@ -126,8 +129,6 @@
           <input type="text" placeholder="treed35@student.gsu.edu">
           <i class="fa-regular fa-envelope"></i>
         </div>
-
-        <div class="btn">Submit</div>
       </div>
     </section>
 
@@ -148,12 +149,18 @@
         </li>
 
          <li>
-          <a href="#contact">Contact</a>
+          <a href="mailto:treed35@student.gsu.edu">Contact</a>
         </li>
 
 
       </ul>
     </footer>
 
+  <script>
+    // Mobile menu: the hamburger icon was in the markup but had no behavior
+    const header = document.querySelector('header');
+    document.getElementById('menu-icon').addEventListener('click', () => header.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => header.classList.remove('open')));
+  </script>
 </body>
 </html>

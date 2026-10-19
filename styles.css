@@ -140,6 +140,9 @@ section{
     font-size: 2rem;
 }
 
+.btn{
+    color: inherit;
+}
 .btn-group{
     display: flex;
     gap: 1rem;
@@ -160,6 +163,9 @@ section{
     color: white;
 }
 
+.socials{
+    color: inherit;
+}
 .socials{
     display: flex;
     gap: 2rem;
@@ -184,7 +190,7 @@ section{
 
 .experience-info{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 2rem;
 }
 
@@ -230,21 +236,21 @@ section{
    color: transparent;
 }
 
+/* Invisible scroll: page still scrolls, scrollbars are hidden */
+html{
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;   /* old Edge/IE */
+}
+
 ::-webkit-scrollbar{
-    width: 20px;
-}
-
-::-webkit-scrollbar-track{
-    background-color: yellowgreen;
-}
-
-::-webkit-scrollbar-thumb{
-    background: #228B22;
+    display: none;              /* Chrome, Safari, new Edge */
+    width: 0;
+    height: 0;
 }
 
 .project-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(min(300px, 100%),1fr));
     gap: 2rem;
     flex-direction: column;
     align-items: center;
@@ -275,4 +281,99 @@ section{
 .project-card h3{
     font-size: 2rem;
     font-weight: 500;
+}
+
+/* Footer links */
+footer li a{
+    color: black;
+}
+
+/* ---------- Auto-fit ---------- */
+@media (max-width: 900px){
+    header{
+        gap: 1rem;
+        flex-wrap: wrap;
+        padding: 0.8rem 1.2rem;
+    }
+
+    #menu-icon{
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-links,
+    .visit-btn{
+        display: none;
+    }
+
+    header.open{
+        width: calc(100% - 2rem);
+        flex-direction: column;
+        border-radius: 2rem;
+    }
+
+    header.open .nav-links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    header.open .visit-btn{
+        display: block;
+    }
+
+    section{
+        padding: 6rem 6%;
+    }
+
+    .about .about-container{
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .about img{
+        width: min(60vw, 320px);
+    }
+
+    .info-box h3{
+        font-size: 1.4rem;
+    }
+
+    .info-box h1{
+        font-size: 2.5rem;
+    }
+
+    .info-box span{
+        font-size: 1.5rem;
+    }
+
+    .section-title{
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .grid-card{
+        padding: 2rem;
+        border-radius: 2rem;
+    }
+
+    .btn-group{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px){
+    .info-box h1{
+        font-size: 2rem;
+    }
+
+    .section-title{
+        font-size: 2rem;
+    }
+
+    .grid-card{
+        padding: 1.5rem;
+    }
 }
